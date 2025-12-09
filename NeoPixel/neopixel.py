@@ -28,16 +28,13 @@ def loop():
         # Iterate through each LED in the ring
         hue = int(i * (255 / led_num) + position) % 256  # Calculate the hue value based on the LED position and current position
         color = wheel(hue)  # Get the color based on the calculated hue
-        color = tuple(int(val * brightness) for val in color)
-        print(color)  # Adjust the color brightness
-        print(i)
-        print(position)
+        color = tuple(int(val * brightness) for val in color)  # Adjust the color brightness
+        print(color)
         neoRing[(i + position) % led_num] = color  # Set the color of the corresponding LED
 
-        
     neoRing.write()  # Update the WS2812 ring with the new colors
     position = (position + 1) % led_num  # Increment the position for the next iteration
-    time.sleep_ms(1000)  # Delay for a short period to control the animation speed
+    time.sleep_ms(200)  # Delay for a short period to control the animation speed
 
 while True:
     loop()  # Run the loop function continuously to display the rainbow animation
