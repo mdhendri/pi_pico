@@ -28,34 +28,36 @@ def set_brightness(pwm_object, brightness_percent):
 # Example usage:
 try:
     while True:
-        
+        #LED 1 breathing effect
         for i in range(0, 101, 5):
             set_brightness(pwm_1, i)
             time.sleep(0.05)
-       
+
         for i in range(100, -1, -5):
             set_brightness(pwm_1, i)
             time.sleep(0.05)
         time.sleep(0.5)
 
+        #LED 2 breathing effect
         for i in range(0, 101, 5):
             set_brightness(pwm_2, i)
             time.sleep(0.05)
-       
+
         for i in range(100, -1, -5):
             set_brightness(pwm_2, i)
             time.sleep(0.05)
         time.sleep(0.5)
 
+        #LED 3 breathing effect
         for i in range(0, 101, 5):
             set_brightness(pwm_3, i)
             time.sleep(0.05)
-       
+
         for i in range(100, -1, -5):
             set_brightness(pwm_3, i)
             time.sleep(0.05)
         time.sleep(0.5)
-       
+
 
 
 except KeyboardInterrupt:
